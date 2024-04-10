@@ -7,8 +7,9 @@ export default {
 
     async function reachWeather() {
       try {
-        const response = await fetch('//api.met.no/weatherapi/locationforecast/2.0');
+        const response = await fetch('http://10.0.0.155/test');
         const data = await response.json();
+        console.log(data.svar)
         message.value = data.svar;
       } catch (error) {
           console.error('There was an error fetching the posts ÆÆÆÆ:', error);
@@ -27,5 +28,5 @@ export default {
 <p>tÆÆÆst</p>
 <br>
 <p>{{ message }}</p>
-<buttuon v-on:click="reachWeather()">reach thyne weather</buttuon>
+<button v-on:click="reachWeather()">reach thyne weather</button>
 </template>
